@@ -1,5 +1,7 @@
 {
+  "name": "shibaswap-v3-sdk",
   "private": true,
+  "description": "ShibaSwap V3 SDK",
   "type": "module",
   "scripts": {
     "build": "pnpm clean && pnpm build:cjs && pnpm build:esm && pnpm build:types",
