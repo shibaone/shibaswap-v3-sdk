@@ -63,6 +63,8 @@ export const EvmChainId = {
   APE: 33139,
   SONIC: 146,
   HEMI: 43111,
-} as const
+  SHIBARIUM: 109,
+  PUPPYNET: 157,
+} as const;
 
-export type EvmChainId = (typeof EvmChainId)[keyof typeof EvmChainId]
+export type EvmChainId = (typeof EvmChainId)[keyof typeof EvmChainId];
