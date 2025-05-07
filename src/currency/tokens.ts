@@ -479,23 +479,37 @@ export const WETH9 = {
     symbol: "ETH",
     name: "Ether",
   }),
-};
+  [EvmChainId.BASE_TESTNET]: new Token({
+    chainId: EvmChainId.BASE_TESTNET,
+    address: WETH9_ADDRESS[EvmChainId.BASE_TESTNET],
+    decimals: 18,
+    symbol: "WETH",
+    name: "Wrapped Ether",
+  }),
+  [EvmChainId.BASE_SEPOLIA]: new Token({
+    chainId: EvmChainId.BASE_SEPOLIA,
+    address: WETH9_ADDRESS[EvmChainId.BASE_SEPOLIA],
+    decimals: 18,
+    symbol: "WETH",
+    name: "Wrapped Ether",
+  }),
+} as const;
 
 export const WNATIVE = {
-  [EvmChainId.ETHEREUM]: WETH9[EvmChainId.ETHEREUM],
+  ...WETH9,
+  [EvmChainId.FANTOM]: new Token({
+    chainId: EvmChainId.FANTOM,
+    address: WNATIVE_ADDRESS[EvmChainId.FANTOM],
+    decimals: 18,
+    symbol: "WFTM",
+    name: "Wrapped Fantom",
+  }),
   [EvmChainId.SEPOLIA]: WETH9[EvmChainId.SEPOLIA],
   // [EvmChainId.ROPSTEN]: WETH9[EvmChainId.ROPSTEN],
   // [EvmChainId.RINKEBY]: WETH9[EvmChainId.RINKEBY],
   [EvmChainId.GÖRLI]: WETH9[EvmChainId.GÖRLI],
   // [EvmChainId.KOVAN]: WETH9[EvmChainId.KOVAN],
   [EvmChainId.OPTIMISM]: WETH9[EvmChainId.OPTIMISM],
-  [EvmChainId.FANTOM]: new Token({
-    chainId: EvmChainId.FANTOM,
-    address: WNATIVE_ADDRESS[EvmChainId.FANTOM],
-    decimals: 18,
-    symbol: "WFTM",
-    name: "Wrapped FTM",
-  }),
   [EvmChainId.FANTOM_TESTNET]: new Token({
     chainId: EvmChainId.FANTOM_TESTNET,
     address: WNATIVE_ADDRESS[EvmChainId.FANTOM_TESTNET],
@@ -678,7 +692,6 @@ export const WNATIVE = {
   // [EvmChainId.SEPOLIA]: WETH9[EvmChainId.SEPOLIA],
   // [EvmChainId.CONSENSUS_ZKEVM_TESTNET]: WETH9[EvmChainId.CONSENSUS_ZKEVM_TESTNET],
   // [EvmChainId.SCROLL_ALPHA_TESTNET]: WETH9[EvmChainId.SCROLL_ALPHA_TESTNET],
-  // [EvmChainId.BASE_TESTNET]: WETH9[EvmChainId.BASE_TESTNET],
   [EvmChainId.THUNDERCORE]: new Token({
     chainId: EvmChainId.THUNDERCORE,
     address: WNATIVE_ADDRESS[EvmChainId.THUNDERCORE],
@@ -727,11 +740,7 @@ export const WNATIVE = {
     name: "Wrapped CRO",
   }),
   [EvmChainId.BLAST]: WETH9[EvmChainId.BLAST],
-  [EvmChainId.SKALE_EUROPA]: new Token({
-    chainId: EvmChainId.SKALE_EUROPA,
-    address: WNATIVE_ADDRESS[EvmChainId.SKALE_EUROPA],
-    decimals: 0,
-  }),
+  [EvmChainId.SKALE_EUROPA]: WETH9[EvmChainId.SKALE_EUROPA],
   [EvmChainId.ROOTSTOCK]: WBTC[EvmChainId.ROOTSTOCK],
   [EvmChainId.MANTLE]: new Token({
     chainId: EvmChainId.MANTLE,
@@ -766,6 +775,8 @@ export const WNATIVE = {
     name: "Wrapped Sonic",
   }),
   [EvmChainId.HEMI]: WETH9[EvmChainId.HEMI],
+  [EvmChainId.SHIBARIUM]: WETH9[EvmChainId.SHIBARIUM],
+  [EvmChainId.PUPPYNET]: WETH9[EvmChainId.PUPPYNET],
 } as const;
 
 export const SUSHI = addressMapToTokenMap(
