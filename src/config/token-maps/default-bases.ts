@@ -1,5 +1,5 @@
-import { getAddress as _getAddress } from 'viem/utils'
-import { EvmChainId } from '../../chain/evm/index.js'
+import { getAddress as _getAddress } from "viem/utils";
+import { EvmChainId } from "../../chain/evm/index.js";
 import {
   APE_USD,
   ARB,
@@ -28,13 +28,13 @@ import {
   axlUSDC,
   axlUSDT,
   axlWBTC,
-} from '../../currency/index.js'
+} from "../../currency/index.js";
 import {
   STARGATE_USDC,
   STARGATE_USDT,
   STARGATE_WBTC,
   STARGATE_WETH,
-} from '../features/stargate.js'
+} from "../features/stargate.js";
 
 /*
   Currencies that are shown at the top of the token selector by default
@@ -248,10 +248,10 @@ export const EVM_DEFAULT_BASES = {
     WNATIVE[EvmChainId.BOBA_BNB],
     new Token({
       chainId: EvmChainId.BOBA_BNB,
-      symbol: 'BNB',
-      name: 'Binance Coin',
+      symbol: "BNB",
+      name: "Binance Coin",
       decimals: 18,
-      address: '0x4200000000000000000000000000000000000023',
+      address: "0x4200000000000000000000000000000000000023",
     }),
     USDC[EvmChainId.BOBA_BNB],
     USDT[EvmChainId.BOBA_BNB],
@@ -320,18 +320,18 @@ export const EVM_DEFAULT_BASES = {
     DAI[EvmChainId.BASE],
     new Token({
       chainId: EvmChainId.BASE,
-      symbol: 'USDbC',
-      name: 'USD Base Coin',
+      symbol: "USDbC",
+      name: "USD Base Coin",
       decimals: 6,
-      address: '0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA',
+      address: "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
     }),
     USDC[EvmChainId.BASE],
     new Token({
       chainId: EvmChainId.BASE,
-      symbol: 'OX',
-      name: 'OX Coin',
+      symbol: "OX",
+      name: "OX Coin",
       decimals: 18,
-      address: '0xba0Dda8762C24dA9487f5FA026a9B64b695A07Ea',
+      address: "0xba0Dda8762C24dA9487f5FA026a9B64b695A07Ea",
     }),
   ],
   [EvmChainId.SCROLL]: [
@@ -434,7 +434,7 @@ export const EVM_DEFAULT_BASES = {
     USDT[EvmChainId.HEMI],
   ],
   // [ChainId.SEPOLIA]: [Native.onChain(ChainId.SEPOLIA), WNATIVE[ChainId.SEPOLIA]],
-} as const satisfies Record<EvmChainId, Readonly<(Token | Native)[]>>
+} as const satisfies Record<EvmChainId, Readonly<(Token | Native)[]>>;
 
 // const DEFAULT_BASES_IDS = Object.entries(DEFAULT_BASES).reduce<
 //   Record<string, string[]>

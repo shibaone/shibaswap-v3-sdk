@@ -1,4 +1,4 @@
-import { EvmChainId } from '../../chain/evm/index.js'
+import { EvmChainId } from "../../chain/evm/index.js";
 import {
   APE_USD,
   BASE_BRIDGE_USDC,
@@ -34,8 +34,8 @@ import {
   ZETA_ETH_BRIDGE_USDC,
   ZETA_ETH_BRIDGE_USDT,
   axlUSDC,
-} from '../../currency/index.js'
-import { STARGATE_USDC, STARGATE_USDT } from '../features/stargate.js'
+} from "../../currency/index.js";
+import { STARGATE_USDC, STARGATE_USDT } from "../features/stargate.js";
 
 export const STABLES = {
   [EvmChainId.ARBITRUM]: [
@@ -165,17 +165,17 @@ export const STABLES = {
     FRAX[EvmChainId.MOONBEAM],
     new Token({
       chainId: EvmChainId.MOONBEAM,
-      address: '0xFFfffffF7D2B0B761Af01Ca8e25242976ac0aD7D',
+      address: "0xFFfffffF7D2B0B761Af01Ca8e25242976ac0aD7D",
       decimals: 6,
-      name: 'USD Coin',
-      symbol: 'xcUSDC',
+      name: "USD Coin",
+      symbol: "xcUSDC",
     }),
     new Token({
       chainId: EvmChainId.MOONBEAM,
-      address: '0xFFFFFFfFea09FB06d082fd1275CD48b191cbCD1d',
+      address: "0xFFFFFFfFea09FB06d082fd1275CD48b191cbCD1d",
       decimals: 6,
-      name: 'Tether USD',
-      symbol: 'xcUSDT',
+      name: "Tether USD",
+      symbol: "xcUSDT",
     }),
   ],
   [EvmChainId.MOONRIVER]: [
@@ -290,4 +290,4 @@ export const STABLES = {
   [EvmChainId.SEPOLIA]: [],
   [EvmChainId.GÖRLI]: [],
   [EvmChainId.CURTIS]: [USDT[EvmChainId.CURTIS], DAI[EvmChainId.CURTIS]],
-} as const satisfies Record<EvmChainId, Token[]>
+} as const satisfies Record<EvmChainId, Token[]>;
