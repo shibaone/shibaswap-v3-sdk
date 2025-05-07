@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "types": ["vitest/globals"],
+    "paths": {
+      "shibaswap-v3-sdk/*": ["../src/*"]
+    }
+  },
+  "include": ["./**/*.ts"]
+} 

@@ -1,0 +1,11 @@
+{
+  "name": "shibaswap-v3-sdk-test",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "shibaswap-v3-sdk": "file:.."
+  },
+  "devDependencies": {
+    "vitest": "^2.1.1"
+  }
+} 
