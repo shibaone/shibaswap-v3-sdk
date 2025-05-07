@@ -3,6 +3,88 @@
   "private": true,
   "description": "ShibaSwap V3 SDK",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/_types/index.d.ts",
+      "import": "./src/_esm/index.js",
+      "require": "./src/_cjs/index.js"
+    },
+    "./chain": {
+      "types": "./src/_types/chain/index.d.ts",
+      "import": "./src/_esm/chain/index.js",
+      "require": "./src/_cjs/chain/index.js"
+    },
+    "./abi": {
+      "types": "./src/_types/abi/index.d.ts",
+      "import": "./src/_esm/abi/index.js",
+      "require": "./src/_cjs/abi/index.js"
+    },
+    "./address": {
+      "types": "./src/_types/address/index.d.ts",
+      "import": "./src/_esm/address/index.js",
+      "require": "./src/_cjs/address/index.js"
+    },
+    "./api": {
+      "types": "./src/_types/api/index.d.ts",
+      "import": "./src/_esm/api/index.js",
+      "require": "./src/_cjs/api/index.js"
+    },
+    "./calculate": {
+      "types": "./src/_types/calculate/index.d.ts",
+      "import": "./src/_esm/calculate/index.js",
+      "require": "./src/_cjs/calculate/index.js"
+    },
+    "./config": {
+      "types": "./src/_types/config/index.d.ts",
+      "import": "./src/_esm/config/index.js",
+      "require": "./src/_cjs/config/index.js"
+    },
+    "./currency": {
+      "types": "./src/_types/currency/index.d.ts",
+      "import": "./src/_esm/currency/index.js",
+      "require": "./src/_cjs/currency/index.js"
+    },
+    "./data": {
+      "types": "./src/_types/data/index.d.ts",
+      "import": "./src/_esm/data/index.js",
+      "require": "./src/_cjs/data/index.js"
+    },
+    "./format": {
+      "types": "./src/_types/format/index.d.ts",
+      "import": "./src/_esm/format/index.js",
+      "require": "./src/_cjs/format/index.js"
+    },
+    "./math": {
+      "types": "./src/_types/math/index.d.ts",
+      "import": "./src/_esm/math/index.js",
+      "require": "./src/_cjs/math/index.js"
+    },
+    "./pool": {
+      "types": "./src/_types/pool/index.d.ts",
+      "import": "./src/_esm/pool/index.js",
+      "require": "./src/_cjs/pool/index.js"
+    },
+    "./sort": {
+      "types": "./src/_types/sort/index.d.ts",
+      "import": "./src/_esm/sort/index.js",
+      "require": "./src/_cjs/sort/index.js"
+    },
+    "./token-list": {
+      "types": "./src/_types/token-list/index.d.ts",
+      "import": "./src/_esm/token-list/index.js",
+      "require": "./src/_cjs/token-list/index.js"
+    },
+    "./types": {
+      "types": "./src/_types/types/index.d.ts",
+      "import": "./src/_esm/types/index.js",
+      "require": "./src/_cjs/types/index.js"
+    },
+    "./validate": {
+      "types": "./src/_types/validate/index.d.ts",
+      "import": "./src/_esm/validate/index.js",
+      "require": "./src/_cjs/validate/index.js"
+    }
+  },
   "scripts": {
     "build": "pnpm clean && pnpm build:cjs && pnpm build:esm && pnpm build:types",
     "build:cjs": "tsc --project ./tsconfig.build.json --module commonjs --outDir ./src/_cjs --removeComments --verbatimModuleSyntax false --esModuleInterop true && printf '{\"type\":\"commonjs\"}' > ./src/_cjs/package.json",
