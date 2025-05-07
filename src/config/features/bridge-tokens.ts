@@ -214,7 +214,9 @@ export const POS_BRIDGE_TOKENS: Record<EvmChainId, Token[]> = {
     }),
   ],
   [EvmChainId.PUPPYNET]: [],
-};
+  [EvmChainId.BASE_TESTNET]: [],
+  [EvmChainId.BASE_SEPOLIA]: [],
+} as const satisfies Record<EvmChainId, Token[]>;
 
 // Helper function to check if a token is supported by POS bridge
 export function isPOSBridgeToken(

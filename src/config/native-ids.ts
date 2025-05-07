@@ -41,7 +41,8 @@ export const nativeCurrencyIds = {
   [EvmChainId.THUNDERCORE]: "TT",
   // [EvmChainId.CONSENSUS_ZKEVM_TESTNET]: 'ETH',
   // [EvmChainId.SCROLL_ALPHA_TESTNET]: 'ETH',
-  // [EvmChainId.BASE_TESTNET]: 'ETH',
+  [EvmChainId.BASE_TESTNET]: "ETH",
+  [EvmChainId.BASE_SEPOLIA]: "ETH",
   [EvmChainId.POLYGON_ZKEVM]: "ETH",
   [EvmChainId.CORE]: "CORE",
   [EvmChainId.HAQQ]: "ISLM",
@@ -64,7 +65,7 @@ export const nativeCurrencyIds = {
   [EvmChainId.ZKLINK]: "ETH",
   [EvmChainId.APE]: "APE",
   [EvmChainId.SONIC]: "S",
-  [EvmChainId.HEMI]: "ETH",
+  [EvmChainId.HEMI]: "HEMI",
   [EvmChainId.SHIBARIUM]: "BONE", // or whatever the native token symbol is
   [EvmChainId.PUPPYNET]: "BONE",
 } as const;
