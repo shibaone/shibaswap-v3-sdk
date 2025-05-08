@@ -7,7 +7,7 @@
       "types": ["@types/bun", "@types/node"],
       "baseUrl": ".",
       "paths": {
-        "~sushi/*": ["../src/*"]
+        "~shibaswap-v3-sdk/*": ["../src/*"]
       }
     }
   }

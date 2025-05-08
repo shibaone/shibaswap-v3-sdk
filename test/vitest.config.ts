@@ -5,7 +5,7 @@ export default defineConfig({
   test: {
     alias: {
       "~contracts": join(__dirname, "../contracts"),
-      "~sushi": join(__dirname, "../src"),
+      "~shibaswap-v3-sdk": join(__dirname, "../src"),
       "~test": join(__dirname, "."),
     },
     benchmark: {
