@@ -10,7 +10,7 @@
     "baseUrl": ".",
     "paths": {
       "~contracts/*": ["./contracts/*"],
-      "~sushi/*": ["./src/*"],
+      "~shibaswap-v3-sdk/*": ["./src/*"],
       "~test/*": ["./test/*"]
     }
   }
