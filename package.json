@@ -253,5 +253,10 @@
     "sdk"
   ],
   "author": "ShibaSwap Team",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "src/_esm",
+    "src/_cjs",
+    "src/_types"
+  ]
 }
