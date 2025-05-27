@@ -50,6 +50,18 @@
       "require": "./src/_cjs/config/index.js",
       "default": "./src/_esm/config/index.js"
     },
+    "./config/subgraph": {
+      "types": "./src/_types/config/subgraph/index.d.ts",
+      "import": "./src/_esm/config/subgraph/index.js",
+      "require": "./src/_cjs/config/subgraph/index.js",
+      "default": "./src/_esm/config/subgraph/index.js"
+    },
+    "./config/subgraph/*": {
+      "types": "./src/_types/config/subgraph/*.d.ts",
+      "import": "./src/_esm/config/subgraph/*.js",
+      "require": "./src/_cjs/config/subgraph/*.js",
+      "default": "./src/_esm/config/subgraph/*.js"
+    },
     "./currency": {
       "types": "./src/_types/currency/index.d.ts",
       "import": "./src/_esm/currency/index.js",
@@ -255,8 +267,8 @@
   "author": "ShibaSwap Team",
   "license": "MIT",
   "files": [
-    "src/_esm",
-    "src/_cjs",
-    "src/_types"
+    "src/_esm/**",
+    "src/_cjs/**",
+    "src/_types/**"
   ]
 }
