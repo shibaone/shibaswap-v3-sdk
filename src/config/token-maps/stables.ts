@@ -290,8 +290,7 @@ export const STABLES = {
   [EvmChainId.SEPOLIA]: [],
   [EvmChainId.GÖRLI]: [],
   [EvmChainId.CURTIS]: [USDT[EvmChainId.CURTIS], DAI[EvmChainId.CURTIS]],
-  [EvmChainId.BASE_TESTNET]: [],
   [EvmChainId.PUPPYNET]: [],
   [EvmChainId.SHIBARIUM]: [],
-  [EvmChainId.BASE_SEPOLIA]: [],
+  // [EvmChainId.BASE_SEPOLIA]: [],
 } as const satisfies Record<EvmChainId, Token[]>;

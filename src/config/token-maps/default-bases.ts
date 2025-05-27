@@ -433,9 +433,9 @@ export const EVM_DEFAULT_BASES = {
     USDC[EvmChainId.HEMI],
     USDT[EvmChainId.HEMI],
   ],
-  [EvmChainId.BASE_SEPOLIA]: [],
+  // [EvmChainId.BASE_SEPOLIA]: [],
   [EvmChainId.SHIBARIUM]: [],
-  [EvmChainId.BASE_TESTNET]: [],
+  // [EvmChainId.BASE_TESTNET]: [],
   [EvmChainId.PUPPYNET]: [],
   // [ChainId.SEPOLIA]: [Native.onChain(ChainId.SEPOLIA), WNATIVE[ChainId.SEPOLIA]],
 } as const satisfies Record<EvmChainId, Readonly<(Token | Native)[]>>;
