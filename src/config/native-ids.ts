@@ -41,8 +41,6 @@ export const nativeCurrencyIds = {
   [EvmChainId.THUNDERCORE]: "TT",
   // [EvmChainId.CONSENSUS_ZKEVM_TESTNET]: 'ETH',
   // [EvmChainId.SCROLL_ALPHA_TESTNET]: 'ETH',
-  [EvmChainId.BASE_TESTNET]: "ETH",
-  [EvmChainId.BASE_SEPOLIA]: "ETH",
   [EvmChainId.POLYGON_ZKEVM]: "ETH",
   [EvmChainId.CORE]: "CORE",
   [EvmChainId.HAQQ]: "ISLM",

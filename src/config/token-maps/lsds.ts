@@ -371,8 +371,6 @@ export const LSDS = {
   [EvmChainId.HEMI]: [],
   [EvmChainId.SHIBARIUM]: [],
   [EvmChainId.PUPPYNET]: [],
-  [EvmChainId.BASE_TESTNET]: [],
-  [EvmChainId.BASE_SEPOLIA]: [],
   // TESTNETS
   [EvmChainId.POLYGON_TESTNET]: [],
   [EvmChainId.FANTOM_TESTNET]: [],

@@ -20,7 +20,7 @@ export interface EvmChainBase {
   name: string;
   nativeCurrency: NativeCurrency;
   shortName: string;
-  chainId: number;
+  chainId: EvmChainId;
   explorers?: Explorer[];
   parent?: Parent;
 }
@@ -241,12 +241,12 @@ export const evmChainIds = RAW.map((chain) => chain.chainId);
 
 // Chain Short Name => Chain Id mapping
 export const evmChainShortNameToChainId = Object.fromEntries(
-  RAW.map((data): [string, number] => [data.shortName, data.chainId])
+  RAW.map((data): [string, EvmChainId] => [data.shortName, data.chainId])
 );
 
 // Chain Id => Short Name mapping
 export const evmChainShortName = Object.fromEntries(
-  RAW.map((data): [number, string] => [
+  RAW.map((data): [EvmChainId, string] => [
     data.chainId,
     EvmChain.fromRaw(data).shortName,
   ])
@@ -254,7 +254,7 @@ export const evmChainShortName = Object.fromEntries(
 
 // Chain Id => Chain Name mapping
 export const evmChainName = Object.fromEntries(
-  RAW.map((data): [number, string] => [
+  RAW.map((data): [EvmChainId, string] => [
     data.chainId,
     EvmChain.fromRaw(data).name,
   ])
@@ -269,8 +269,8 @@ export const getEvmChainInfo = (
   const _chainId = Number.parseInt(input);
 
   if (isEvmChainId(_chainId)) {
-    const networkName = EvmChainKey[_chainId];
-    return { chainId: _chainId, networkName };
+    const networkName = EvmChainKey[_chainId as EvmChainId];
+    return { chainId: _chainId as EvmChainId, networkName };
   }
 
   if (isEvmNetworkNameKey(_networkName)) {
@@ -296,6 +296,8 @@ export const EVM_TESTNET_CHAIN_IDS = [
   // EvmChainId.GÖRLI,
   // EvmChainId.KOVAN,
   EvmChainId.CURTIS,
+  // EvmChainId.BASE_TESTNET,
+  // EvmChainId.BASE_SEPOLIA,
 ] as const;
 export type EvmTestnetChainId = (typeof EVM_TESTNET_CHAIN_IDS)[number];
 
@@ -344,8 +346,8 @@ export const EvmChainKey = {
   // [EvmChainId.CONSENSUS_ZKEVM_TESTNET]: 'consensus-zkevm-testnet',
   // [EvmChainId.SCROLL_ALPHA_TESTNET]: 'scroll-alpha-testnet',
   [EvmChainId.BASE]: "base",
-  [EvmChainId.BASE_TESTNET]: "base-testnet",
-  [EvmChainId.BASE_SEPOLIA]: "base-sepolia",
+  // [EvmChainId.BASE_TESTNET]: "base-testnet",
+  // [EvmChainId.BASE_SEPOLIA]: "base-sepolia",
   [EvmChainId.POLYGON_ZKEVM]: "polygon-zkevm",
   [EvmChainId.THUNDERCORE]: "thundercore",
   [EvmChainId.HAQQ]: "haqq",

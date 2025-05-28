@@ -4,21 +4,15 @@
   "private": false,
   "description": "ShibaSwap V3 SDK",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "./src/_cjs/index.js",
   "module": "./src/_esm/index.js",
-  "types": "dist/index.d.ts",
+  "types": "./src/_types/index.d.ts",
   "exports": {
     ".": {
       "types": "./src/_types/index.d.ts",
       "import": "./src/_esm/index.js",
       "require": "./src/_cjs/index.js",
       "default": "./src/_esm/index.js"
-    },
-    "./chain": {
-      "types": "./src/_types/chain/index.d.ts",
-      "import": "./src/_esm/chain/index.js",
-      "require": "./src/_cjs/chain/index.js",
-      "default": "./src/_esm/chain/index.js"
     },
     "./abi": {
       "types": "./src/_types/abi/index.d.ts",
@@ -43,6 +37,12 @@
       "import": "./src/_esm/calculate/index.js",
       "require": "./src/_cjs/calculate/index.js",
       "default": "./src/_esm/calculate/index.js"
+    },
+    "./chain": {
+      "types": "./src/_types/chain/index.d.ts",
+      "import": "./src/_esm/chain/index.js",
+      "require": "./src/_cjs/chain/index.js",
+      "default": "./src/_esm/chain/index.js"
     },
     "./config": {
       "types": "./src/_types/config/index.d.ts",
@@ -117,20 +117,18 @@
     "clean": "rm -rf *.tsbuildinfo src/*.tsbuildinfo src/_esm src/_cjs src/_types",
     "docs:dev": "pnpm --filter site dev",
     "docs:build": "pnpm --filter site build",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format": "biome format --write .",
     "generate": "pnpm tsx ./src/chain/evm/generate.ts",
-    "lint": "eslint . --ext .ts",
+    "lint": "biome check --write .",
     "lint:dryrun": "biome check .",
     "lint:repo": "sherif",
     "lint:unused": "pnpm clean && knip",
     "prepare": "pnpm generate",
     "preinstall": "pnpx only-allow pnpm",
     "prepublishOnly": "bun scripts/prepublish-only.ts",
-    "test": "vitest -c ./test/vitest.config.ts",
+    "test": "vitest -c ./test/vitest.config.ts dev",
     "test:ci": "CI=true vitest -c ./test/vitest.config.ts --coverage --retry=3 --bail=1",
-    "test:cov": "vitest -c ./test/vitest.config.ts --coverage",
-    "test:watch": "vitest -c ./test/vitest.config.ts --watch",
-    "test:ui": "vitest -c ./test/vitest.config.ts --ui",
+    "test:cov": "vitest dev -c ./test/vitest.config.ts --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -180,16 +178,7 @@
     "typescript": "5.5.4",
     "viem": "2.21.55",
     "vitest": "2.1.1",
-    "zod": "3.24.1",
-    "@types/jest": "^29.5.11",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "jest": "^29.7.0",
-    "prettier": "^3.1.1",
-    "ts-jest": "^29.1.1"
+    "zod": "3.24.1"
   },
   "packageManager": "pnpm@10.4.1",
   "engines": {
@@ -255,8 +244,8 @@
   "author": "ShibaSwap Team",
   "license": "MIT",
   "files": [
-    "src/_esm",
-    "src/_cjs",
-    "src/_types"
+    "src/_esm/**",
+    "src/_cjs/**",
+    "src/_types/**"
   ]
 }

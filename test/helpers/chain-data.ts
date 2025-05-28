@@ -40,7 +40,7 @@ const NATIVE_CURRENCIES = {
   [EvmChainId.BOBA_AVAX]: { name: "Boba", symbol: "BOBA", decimals: 18 },
   [EvmChainId.BOBA_BNB]: { name: "Boba", symbol: "BOBA", decimals: 18 },
   [EvmChainId.BTTC]: { name: "BTT", symbol: "BTT", decimals: 18 },
-  [EvmChainId.BASE_TESTNET]: { name: "Ether", symbol: "ETH", decimals: 18 },
+  // [EvmChainId.BASE_TESTNET]: { name: "Ether", symbol: "ETH", decimals: 18 },
   [EvmChainId.POLYGON_ZKEVM]: { name: "Ether", symbol: "ETH", decimals: 18 },
   [EvmChainId.THUNDERCORE]: {
     name: "Thunder Token",
@@ -53,7 +53,7 @@ const NATIVE_CURRENCIES = {
   [EvmChainId.ZKSYNC_ERA]: { name: "Ether", symbol: "ETH", decimals: 18 },
   [EvmChainId.LINEA]: { name: "Ether", symbol: "ETH", decimals: 18 },
   [EvmChainId.BASE]: { name: "Ether", symbol: "ETH", decimals: 18 },
-  [EvmChainId.BASE_SEPOLIA]: { name: "Ether", symbol: "ETH", decimals: 18 },
+  // [EvmChainId.BASE_SEPOLIA]: { name: "Ether", symbol: "ETH", decimals: 18 },
   [EvmChainId.SCROLL]: { name: "Ether", symbol: "ETH", decimals: 18 },
   [EvmChainId.ZETACHAIN]: { name: "ZETA", symbol: "ZETA", decimals: 18 },
   [EvmChainId.CRONOS]: { name: "Cronos", symbol: "CRO", decimals: 18 },

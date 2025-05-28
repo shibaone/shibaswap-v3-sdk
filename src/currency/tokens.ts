@@ -479,20 +479,6 @@ export const WETH9 = {
     symbol: "ETH",
     name: "Ether",
   }),
-  [EvmChainId.BASE_TESTNET]: new Token({
-    chainId: EvmChainId.BASE_TESTNET,
-    address: WETH9_ADDRESS[EvmChainId.BASE_TESTNET],
-    decimals: 18,
-    symbol: "WETH",
-    name: "Wrapped Ether",
-  }),
-  [EvmChainId.BASE_SEPOLIA]: new Token({
-    chainId: EvmChainId.BASE_SEPOLIA,
-    address: WETH9_ADDRESS[EvmChainId.BASE_SEPOLIA],
-    decimals: 18,
-    symbol: "WETH",
-    name: "Wrapped Ether",
-  }),
 } as const;
 
 export const WNATIVE = {
