@@ -1,10 +1,10 @@
-export const SushiSwapProtocol = {
-  SUSHISWAP_V2: 'SUSHISWAP_V2',
-  SUSHISWAP_V3: 'SUSHISWAP_V3',
-} as const
+export const ShibaSwapProtocol = {
+  SHIBASWAP_V2: "SHIBASWAP_V2",
+  SHIBASWAP_V3: "SHIBASWAP_V3",
+} as const;
 
-export type SushiSwapProtocol =
-  (typeof SushiSwapProtocol)[keyof typeof SushiSwapProtocol]
+export type ShibaSwapProtocol =
+  (typeof ShibaSwapProtocol)[keyof typeof ShibaSwapProtocol];
 
-export type SushiSwapV2Protocol = (typeof SushiSwapProtocol)['SUSHISWAP_V2']
-export type SushiSwapV3Protocol = (typeof SushiSwapProtocol)['SUSHISWAP_V3']
+export type ShibaSwapV2Protocol = (typeof ShibaSwapProtocol)["SHIBASWAP_V2"];
+export type ShibaSwapV3Protocol = (typeof ShibaSwapProtocol)["SHIBASWAP_V3"];

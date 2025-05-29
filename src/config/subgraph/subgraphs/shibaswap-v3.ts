@@ -1,6 +1,6 @@
-import { EvmChainId } from '../../../chain/evm/index.js'
-import type { SushiSwapV3ChainId } from '../../features/sushiswap-v3.js'
-import { getSubgraphUrlWrapper, wrapAsIdType } from '../get-subgraph-url.js'
+import { EvmChainId } from "../../../chain/evm/index.js";
+import type { ShibaSwapV3ChainId } from "../../features/shibaswap-v3.js";
+import { getSubgraphUrlWrapper, wrapAsIdType } from "../get-subgraph-url.js";
 import {
   CORE_HOST,
   HAQQ_HOST,
@@ -8,7 +8,7 @@ import {
   SUSHI_DEDICATED_GOLDSKY_HOST,
   SUSHI_GOLDSKY_HOST,
   THUNDERCORE_HOST,
-} from '../hosts.js'
+} from "../hosts.js";
 
 const SUSHISWAP_V3_DECENTRALIZED_DEPLOYMENT_IDS = {
   [EvmChainId.ARBITRUM]: `QmS9GKBA49mDpWchU2Us1PJ7kmu4S7tWa4gAmRvE3HK42w`,
@@ -29,11 +29,11 @@ const SUSHISWAP_V3_DECENTRALIZED_DEPLOYMENT_IDS = {
   // [EvmChainId.FUSE]: `QmakqW3KCpEXJGTSuyfXHGg6C8ppbrPdSqVXWj3Guor9zA`,
   // [EvmChainId.MOONRIVER]: `QmStbnz4sErrK1jzaU5iKAutA1Q2w47EsgAoFbdCiequtZ`,
   // [EvmChainId.POLYGON_ZKEVM]: `QmWH5ChjmF4Yp5Yhiaxczh5QwbG6HFSEi8bRwbKaUrJA6C`,
-} as const satisfies Partial<Record<SushiSwapV3ChainId, string>>
+} as const satisfies Partial<Record<ShibaSwapV3ChainId, string>>;
 
 const SUSHISWAP_V3_DECENTRALIZED_SUBGRAPH_IDS = {} as const satisfies Partial<
-  Record<SushiSwapV3ChainId, string>
->
+  Record<ShibaSwapV3ChainId, string>
+>;
 
 const SUSHISWAP_V3_OTHER_URLS = {
   [EvmChainId.ARBITRUM_NOVA]: `${SUSHI_DEDICATED_GOLDSKY_HOST}/sushi-v3/v3-arbitrum-nova/gn`,
@@ -49,12 +49,12 @@ const SUSHISWAP_V3_OTHER_URLS = {
   [EvmChainId.SKALE_EUROPA]: `${SUSHI_DEDICATED_GOLDSKY_HOST}/sushiswap/v3-skale-europa/gn`,
   [EvmChainId.ROOTSTOCK]: `${SUSHI_DEDICATED_GOLDSKY_HOST}/sushiswap/v3-rootstock-2/gn`,
   [EvmChainId.HEMI]: `${SUSHI_DEDICATED_GOLDSKY_HOST}/sushiswap/v3-hemi/gn`,
-} as const satisfies Partial<Record<SushiSwapV3ChainId, string>>
+} as const satisfies Partial<Record<ShibaSwapV3ChainId, string>>;
 
-export const getSushiSwapV3SubgraphUrl = getSubgraphUrlWrapper({
+export const getShibaSwapV3SubgraphUrl = getSubgraphUrlWrapper({
   decentralizedIds: {
-    ...wrapAsIdType(SUSHISWAP_V3_DECENTRALIZED_DEPLOYMENT_IDS, 'deploymentId'),
-    ...wrapAsIdType(SUSHISWAP_V3_DECENTRALIZED_SUBGRAPH_IDS, 'subgraphId'),
+    ...wrapAsIdType(SUSHISWAP_V3_DECENTRALIZED_DEPLOYMENT_IDS, "deploymentId"),
+    ...wrapAsIdType(SUSHISWAP_V3_DECENTRALIZED_SUBGRAPH_IDS, "subgraphId"),
   },
   otherUrls: SUSHISWAP_V3_OTHER_URLS,
-})<SushiSwapV3ChainId, 'COMPLETE'>()
+})<ShibaSwapV3ChainId, "COMPLETE">();

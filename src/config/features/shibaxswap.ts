@@ -1,6 +1,6 @@
 import { EvmChainId } from "../../chain/evm/index.js";
 
-export const SUSHIXSWAP_SUPPORTED_CHAIN_IDS = [
+export const SHIBAXSWAP_SUPPORTED_CHAIN_IDS = [
   EvmChainId.ARBITRUM,
   EvmChainId.AVALANCHE,
   EvmChainId.BSC,
@@ -10,9 +10,9 @@ export const SUSHIXSWAP_SUPPORTED_CHAIN_IDS = [
   EvmChainId.POLYGON,
 ] as const;
 
-export type SushiXSwapChainId = (typeof SUSHIXSWAP_SUPPORTED_CHAIN_IDS)[number];
+export type ShibaXSwapChainId = (typeof SHIBAXSWAP_SUPPORTED_CHAIN_IDS)[number];
 
-export const SUSHIXSWAP_ADDRESS: Record<SushiXSwapChainId, `0x${string}`> = {
+export const SHIBAXSWAP_ADDRESS: Record<ShibaXSwapChainId, `0x${string}`> = {
   [EvmChainId.ARBITRUM]: "0x53b08DbD70327b7Ba3B7886Fc9987BC985d27262",
   [EvmChainId.AVALANCHE]: "0x2c8C987C4777AB740d20Cb581f5d381BE95A4A4a",
   [EvmChainId.BSC]: "0x7A4af156379f512DE147ed3b96393047226d923F",
@@ -22,12 +22,12 @@ export const SUSHIXSWAP_ADDRESS: Record<SushiXSwapChainId, `0x${string}`> = {
   [EvmChainId.POLYGON]: "0xd08b5f3e89F1e2d6b067e0A0cbdb094e6e41E77c",
 } as const;
 
-export const isSushiXSwapChainId = (
+export const isShibaXSwapChainId = (
   chainId: EvmChainId
-): chainId is SushiXSwapChainId =>
-  SUSHIXSWAP_SUPPORTED_CHAIN_IDS.includes(chainId as SushiXSwapChainId);
+): chainId is ShibaXSwapChainId =>
+  SHIBAXSWAP_SUPPORTED_CHAIN_IDS.includes(chainId as ShibaXSwapChainId);
 
-export const SUSHIXSWAP_2_SUPPORTED_CHAIN_IDS = [
+export const SHIBAXSWAP_2_SUPPORTED_CHAIN_IDS = [
   EvmChainId.ETHEREUM,
   EvmChainId.BSC,
   EvmChainId.AVALANCHE,
@@ -46,10 +46,10 @@ export const SUSHIXSWAP_2_SUPPORTED_CHAIN_IDS = [
   EvmChainId.BLAST,
 ] as const;
 
-export type SushiXSwap2ChainId =
-  (typeof SUSHIXSWAP_2_SUPPORTED_CHAIN_IDS)[number];
+export type ShibaXSwap2ChainId =
+  (typeof SHIBAXSWAP_2_SUPPORTED_CHAIN_IDS)[number];
 
-export const SUSHIXSWAP_2_ADDRESS: Record<SushiXSwap2ChainId, `0x${string}`> = {
+export const SHIBAXSWAP_2_ADDRESS: Record<ShibaXSwap2ChainId, `0x${string}`> = {
   [EvmChainId.ETHEREUM]: "0x804b526e5bf4349819fe2db65349d0825870f8ee",
   [EvmChainId.BSC]: "0x804b526e5bf4349819fe2db65349d0825870f8ee",
   [EvmChainId.AVALANCHE]: "0x804b526e5bf4349819fe2db65349d0825870f8ee",
@@ -68,10 +68,10 @@ export const SUSHIXSWAP_2_ADDRESS: Record<SushiXSwap2ChainId, `0x${string}`> = {
   [EvmChainId.BLAST]: "0x804b526e5bf4349819fe2db65349d0825870f8ee",
 } as const;
 
-export const isSushiXSwap2ChainId = (
+export const isShibaXSwap2ChainId = (
   chainId: EvmChainId
-): chainId is SushiXSwap2ChainId =>
-  SUSHIXSWAP_2_SUPPORTED_CHAIN_IDS.includes(chainId as SushiXSwap2ChainId);
+): chainId is ShibaXSwap2ChainId =>
+  SHIBAXSWAP_2_SUPPORTED_CHAIN_IDS.includes(chainId as ShibaXSwap2ChainId);
 
 export const STARGATE_ADAPTER_SUPPORTED_CHAIN_IDS = [
   EvmChainId.ETHEREUM,
