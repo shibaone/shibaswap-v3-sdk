@@ -6,7 +6,10 @@ export default defineConfig({
     alias: {
       "~contracts": join(__dirname, "../contracts"),
       "~shibaswap-v3-sdk": join(__dirname, "../src"),
+      "~shibaswap-v3-sdk/*": join(__dirname, "../src/*"),
       "~test": join(__dirname, "."),
+      "shibaswap-v3-sdk": join(__dirname, "../src"),
+      "shibaswap-v3-sdk/*": join(__dirname, "../src/*"),
     },
     benchmark: {
       outputFile: "./bench/report.json",
@@ -29,14 +32,17 @@ export default defineConfig({
       ],
     },
     environment: "node",
-    include: ["src/**/*.test.ts"],
+    include: ["src/**/*.test.ts", "test/**/*.test.ts"],
     setupFiles: [join(__dirname, "helpers/setup.ts")],
     testTimeout: 10_000,
     globals: true,
   },
   resolve: {
     alias: {
-      "shibaswap-v3-sdk": "../src",
+      "~shibaswap-v3-sdk": join(__dirname, "../src"),
+      "~shibaswap-v3-sdk/*": join(__dirname, "../src/*"),
+      "shibaswap-v3-sdk": join(__dirname, "../src"),
+      "shibaswap-v3-sdk/*": join(__dirname, "../src/*"),
     },
   },
 });
