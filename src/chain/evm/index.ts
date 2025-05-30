@@ -219,20 +219,20 @@ export class EvmChain implements EvmChainBase {
 
 export const evmNatives = Object.fromEntries(
   RAW.map((data): [EvmChainId, NativeCurrency] => [
-    data.chainId,
+    data.chainId as EvmChainId,
     data.nativeCurrency,
   ])
 );
 
 // Chain Id => Chain mapping
 export const evmChains = Object.fromEntries(
-  RAW.map((data): [EvmChainId, EvmChain] => [data.chainId, new EvmChain(data)])
+  RAW.map((data): [EvmChainId, EvmChain] => [data.chainId as EvmChainId, new EvmChain(data)])
 );
 
 // Chain Id => Chain mapping
 export const evmChainsL2 = Object.fromEntries(
   RAW.filter((data) => "parent" in data && data.parent.type === Type.L2).map(
-    (data): [EvmChainId, EvmChain] => [data.chainId, new EvmChain(data)]
+    (data): [EvmChainId, EvmChain] => [data.chainId as EvmChainId, new EvmChain(data)]
   )
 );
 
@@ -241,13 +241,13 @@ export const evmChainIds = RAW.map((chain) => chain.chainId);
 
 // Chain Short Name => Chain Id mapping
 export const evmChainShortNameToChainId = Object.fromEntries(
-  RAW.map((data): [string, EvmChainId] => [data.shortName, data.chainId])
+  RAW.map((data): [string, EvmChainId] => [data.shortName, data.chainId as EvmChainId])
 );
 
 // Chain Id => Short Name mapping
 export const evmChainShortName = Object.fromEntries(
   RAW.map((data): [EvmChainId, string] => [
-    data.chainId,
+    data.chainId as EvmChainId,
     EvmChain.fromRaw(data).shortName,
   ])
 );
@@ -255,7 +255,7 @@ export const evmChainShortName = Object.fromEntries(
 // Chain Id => Chain Name mapping
 export const evmChainName = Object.fromEntries(
   RAW.map((data): [EvmChainId, string] => [
-    data.chainId,
+    data.chainId as EvmChainId,
     EvmChain.fromRaw(data).name,
   ])
 );
