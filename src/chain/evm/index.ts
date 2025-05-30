@@ -20,7 +20,7 @@ export interface EvmChainBase {
   name: string;
   nativeCurrency: NativeCurrency;
   shortName: string;
-  chainId: EvmChainId;
+  chainId: number;
   explorers?: Explorer[];
   parent?: Parent;
 }
@@ -218,7 +218,7 @@ export class EvmChain implements EvmChainBase {
 }
 
 export const evmNatives = Object.fromEntries(
-  RAW.map((data): [EvmChainId, NativeCurrency] => [
+  RAW.map((data): [number, NativeCurrency] => [
     data.chainId,
     data.nativeCurrency,
   ])
@@ -226,13 +226,13 @@ export const evmNatives = Object.fromEntries(
 
 // Chain Id => Chain mapping
 export const evmChains = Object.fromEntries(
-  RAW.map((data): [EvmChainId, EvmChain] => [data.chainId, new EvmChain(data)])
+  RAW.map((data): [number, EvmChain] => [data.chainId, new EvmChain(data)])
 );
 
 // Chain Id => Chain mapping
 export const evmChainsL2 = Object.fromEntries(
   RAW.filter((data) => "parent" in data && data.parent.type === Type.L2).map(
-    (data): [EvmChainId, EvmChain] => [data.chainId, new EvmChain(data)]
+    (data): [number, EvmChain] => [data.chainId, new EvmChain(data)]
   )
 );
 
@@ -241,12 +241,12 @@ export const evmChainIds = RAW.map((chain) => chain.chainId);
 
 // Chain Short Name => Chain Id mapping
 export const evmChainShortNameToChainId = Object.fromEntries(
-  RAW.map((data): [string, EvmChainId] => [data.shortName, data.chainId])
+  RAW.map((data): [string, number] => [data.shortName, data.chainId])
 );
 
 // Chain Id => Short Name mapping
 export const evmChainShortName = Object.fromEntries(
-  RAW.map((data): [EvmChainId, string] => [
+  RAW.map((data): [number, string] => [
     data.chainId,
     EvmChain.fromRaw(data).shortName,
   ])
@@ -254,7 +254,7 @@ export const evmChainShortName = Object.fromEntries(
 
 // Chain Id => Chain Name mapping
 export const evmChainName = Object.fromEntries(
-  RAW.map((data): [EvmChainId, string] => [
+  RAW.map((data): [number, string] => [
     data.chainId,
     EvmChain.fromRaw(data).name,
   ])
@@ -263,7 +263,7 @@ export const evmChainName = Object.fromEntries(
 export const getEvmChainInfo = (
   input: string
 ):
-  | { chainId: EvmChainId; networkName: EvmChainKey }
+  | { chainId: number; networkName: EvmChainKey }
   | { chainId: undefined; networkName: undefined } => {
   const _networkName = input.toLowerCase();
   const _chainId = Number.parseInt(input);
