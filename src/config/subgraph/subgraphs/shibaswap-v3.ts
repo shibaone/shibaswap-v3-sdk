@@ -24,11 +24,6 @@ const SUSHISWAP_V3_DECENTRALIZED_DEPLOYMENT_IDS = {
   [EvmChainId.LINEA]: `QmNZ9ePvxGRDHAEhb7cLsb3AvtCCPJ3qAwh1CDvDn39RMa`,
   [EvmChainId.SCROLL]: `QmR6VP1qoF8nxhtMaGEg9VMmkaTDFqyeM8nJWkakP6nHes`,
   [EvmChainId.SONIC]: `Qmaa6gJsqzeSnDBjq4NnwerMGMSaSDLqRMDkrevGXwVUt1`,
-
-  // Deprecated chains
-  // [EvmChainId.FUSE]: `QmakqW3KCpEXJGTSuyfXHGg6C8ppbrPdSqVXWj3Guor9zA`,
-  // [EvmChainId.MOONRIVER]: `QmStbnz4sErrK1jzaU5iKAutA1Q2w47EsgAoFbdCiequtZ`,
-  // [EvmChainId.POLYGON_ZKEVM]: `QmWH5ChjmF4Yp5Yhiaxczh5QwbG6HFSEi8bRwbKaUrJA6C`,
 } as const satisfies Partial<Record<ShibaSwapV3ChainId, string>>;
 
 const SUSHISWAP_V3_DECENTRALIZED_SUBGRAPH_IDS = {} as const satisfies Partial<
@@ -49,6 +44,9 @@ const SUSHISWAP_V3_OTHER_URLS = {
   [EvmChainId.SKALE_EUROPA]: `${SUSHI_DEDICATED_GOLDSKY_HOST}/sushiswap/v3-skale-europa/gn`,
   [EvmChainId.ROOTSTOCK]: `${SUSHI_DEDICATED_GOLDSKY_HOST}/sushiswap/v3-rootstock-2/gn`,
   [EvmChainId.HEMI]: `${SUSHI_DEDICATED_GOLDSKY_HOST}/sushiswap/v3-hemi/gn`,
+  [EvmChainId.PUPPYNET]: `${SUSHI_DEDICATED_GOLDSKY_HOST}/sushiswap/v3-puppynet/gn`,
+  [EvmChainId.SHIBARIUM]: `${SUSHI_DEDICATED_GOLDSKY_HOST}/sushiswap/v3-shibarium/gn`,
+  [EvmChainId.SEPOLIA]: `${SUSHI_DEDICATED_GOLDSKY_HOST}/sushiswap/v3-sepolia/gn`,
 } as const satisfies Partial<Record<ShibaSwapV3ChainId, string>>;
 
 export const getShibaSwapV3SubgraphUrl = getSubgraphUrlWrapper({
