@@ -64,6 +64,9 @@ export const SHIBASWAP_V3_FACTORY_ADDRESS: Record<ShibaSwapV3ChainId, Address> =
     [EvmChainId.ROOTSTOCK]: "0x46B3fDF7b5CDe91Ac049936bF0bDb12c5d22202e",
     [EvmChainId.SONIC]: "0x46B3fDF7b5CDe91Ac049936bF0bDb12c5d22202e",
     [EvmChainId.HEMI]: "0xCdBCd51a5E8728E0AF4895ce5771b7d17fF71959",
+    [EvmChainId.PUPPYNET]: "0xc35DADB65012eC5796536bD9864eD8773aBc74C4",
+    [EvmChainId.SHIBARIUM]: "0x0000000000000000000000000000000000000000", // TODO: Replace with actual address
+    [EvmChainId.SEPOLIA]: "0x0000000000000000000000000000000000000000", // TODO: Replace with actual address
   } as const;
 
 export const SHIBASWAP_V3_INIT_CODE_HASH: Record<ShibaSwapV3ChainId, Address> =
@@ -99,6 +102,9 @@ export const SHIBASWAP_V3_INIT_CODE_HASH: Record<ShibaSwapV3ChainId, Address> =
     [EvmChainId.ROOTSTOCK]: POOL_INIT_CODE_HASH,
     [EvmChainId.SONIC]: POOL_INIT_CODE_HASH,
     [EvmChainId.HEMI]: POOL_INIT_CODE_HASH,
+    [EvmChainId.PUPPYNET]: POOL_INIT_CODE_HASH,
+    [EvmChainId.SHIBARIUM]: POOL_INIT_CODE_HASH,
+    [EvmChainId.SEPOLIA]: POOL_INIT_CODE_HASH,
   } as const;
 
 export const SHIBASWAP_V3_POSITION_MANAGER: Record<
@@ -137,6 +143,9 @@ export const SHIBASWAP_V3_POSITION_MANAGER: Record<
   [EvmChainId.ROOTSTOCK]: "0x0389879e0156033202C44BF784ac18fC02edeE4f",
   [EvmChainId.SONIC]: "0x0389879e0156033202C44BF784ac18fC02edeE4f",
   [EvmChainId.HEMI]: "0xe43ca1Dee3F0fc1e2df73A0745674545F11A59F5",
+  [EvmChainId.PUPPYNET]: "0xF4d73326C13a4Fc5FD7A064217e12780e9Bd62c3",
+  [EvmChainId.SHIBARIUM]: "0x0000000000000000000000000000000000000000", // TODO: Replace with actual address
+  [EvmChainId.SEPOLIA]: "0x0000000000000000000000000000000000000000", // TODO: Replace with actual address
 } as const;
 
 export const SHIBASWAP_V3_TICK_LENS: Record<ShibaSwapV3ChainId, Address> = {
@@ -172,6 +181,9 @@ export const SHIBASWAP_V3_TICK_LENS: Record<ShibaSwapV3ChainId, Address> = {
   [EvmChainId.ROOTSTOCK]: "0x33d91116e0370970444B0281AB117e161fEbFcdD",
   [EvmChainId.SONIC]: "0x33d91116e0370970444B0281AB117e161fEbFcdD",
   [EvmChainId.HEMI]: "0x1f2FCf1d036b375b384012e61D3AA33F8C256bbE",
+  [EvmChainId.PUPPYNET]: "0x039e87AB90205F9d87c5b40d4B28e2Be45dA4a20",
+  [EvmChainId.SHIBARIUM]: "0x0000000000000000000000000000000000000000", // TODO: Replace with actual address
+  [EvmChainId.SEPOLIA]: "0x0000000000000000000000000000000000000000", // TODO: Replace with actual address
 } as const;
 
 export const SHIBASWAP_V3_SUPPORTED_CHAIN_IDS = [
@@ -202,10 +214,13 @@ export const SHIBASWAP_V3_SUPPORTED_CHAIN_IDS = [
   EvmChainId.ROOTSTOCK,
   EvmChainId.SONIC,
   EvmChainId.HEMI,
+  EvmChainId.PUPPYNET,
   // DEPRECATED
   // EvmChainId.FUSE,
   // EvmChainId.MOONRIVER,
   // EvmChainId.POLYGON_ZKEVM,
+  EvmChainId.SHIBARIUM,
+  EvmChainId.SEPOLIA,
 ] as const;
 
 export const ShibaSwapV3ChainIds = SHIBASWAP_V3_SUPPORTED_CHAIN_IDS;
