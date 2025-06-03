@@ -217,13 +217,12 @@ export const SHIBASWAP_V3_SUPPORTED_CHAIN_IDS = [
   EvmChainId.ROOTSTOCK,
   EvmChainId.HEMI,
   EvmChainId.PUPPYNET,
-  EvmChainId.SHIBARIUM,
-  EvmChainId.SEPOLIA,
-
   // DEPRECATED
   // EvmChainId.FUSE,
   // EvmChainId.MOONRIVER,
   // EvmChainId.POLYGON_ZKEVM,
+  EvmChainId.SHIBARIUM,
+  EvmChainId.SEPOLIA,
 ] as const;
 
 export const ShibaSwapV3ChainIds = SHIBASWAP_V3_SUPPORTED_CHAIN_IDS;
