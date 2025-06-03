@@ -187,40 +187,43 @@ export const SHIBASWAP_V3_TICK_LENS: Record<ShibaSwapV3ChainId, Address> = {
 } as const;
 
 export const SHIBASWAP_V3_SUPPORTED_CHAIN_IDS = [
-  EvmChainId.ARBITRUM_NOVA,
+  // Decentralized IDs
   EvmChainId.ARBITRUM,
   EvmChainId.AVALANCHE,
   EvmChainId.BSC,
-  EvmChainId.BTTC,
+  EvmChainId.BOBA,
   EvmChainId.ETHEREUM,
   EvmChainId.FANTOM,
   EvmChainId.GNOSIS,
   EvmChainId.OPTIMISM,
   EvmChainId.POLYGON,
-  EvmChainId.BOBA,
-  EvmChainId.THUNDERCORE,
-  EvmChainId.HAQQ,
-  EvmChainId.CORE,
-  // EvmChainId.ZKSYNC_ERA,
-  EvmChainId.LINEA,
   EvmChainId.BASE,
+  EvmChainId.LINEA,
   EvmChainId.SCROLL,
+  EvmChainId.SONIC,
+
+  // Other URLs
+  EvmChainId.ARBITRUM_NOVA,
+  EvmChainId.THUNDERCORE,
+  EvmChainId.CORE,
   EvmChainId.KAVA,
   EvmChainId.METIS,
+  EvmChainId.BTTC,
   EvmChainId.FILECOIN,
+  EvmChainId.HAQQ,
   EvmChainId.ZETACHAIN,
   EvmChainId.BLAST,
   EvmChainId.SKALE_EUROPA,
   EvmChainId.ROOTSTOCK,
-  EvmChainId.SONIC,
   EvmChainId.HEMI,
   EvmChainId.PUPPYNET,
+  EvmChainId.SHIBARIUM,
+  EvmChainId.SEPOLIA,
+
   // DEPRECATED
   // EvmChainId.FUSE,
   // EvmChainId.MOONRIVER,
   // EvmChainId.POLYGON_ZKEVM,
-  EvmChainId.SHIBARIUM,
-  EvmChainId.SEPOLIA,
 ] as const;
 
 export const ShibaSwapV3ChainIds = SHIBASWAP_V3_SUPPORTED_CHAIN_IDS;
