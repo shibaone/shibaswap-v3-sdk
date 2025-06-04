@@ -61,7 +61,6 @@ export const EVM_DEFAULT_BASES = {
     USDC[EvmChainId.SEPOLIA],
     USDT[EvmChainId.SEPOLIA],
     DAI[EvmChainId.SEPOLIA],
-    WETH9[EvmChainId.SEPOLIA],
   ],
   // [EvmChainId.ROPSTEN]: [],
   // [EvmChainId.RINKEBY]: [],
