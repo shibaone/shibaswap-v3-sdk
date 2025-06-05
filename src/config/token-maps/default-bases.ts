@@ -30,7 +30,6 @@ import {
   axlWBTC,
 } from "../../currency/index.js";
 import {
-  BONE_ADDRESS,
   SHIB_ADDRESS,
   LEASH_ADDRESS,
   TREAT_ADDRESS,
