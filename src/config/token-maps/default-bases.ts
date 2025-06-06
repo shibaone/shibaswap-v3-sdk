@@ -30,7 +30,6 @@ import {
   axlWBTC,
 } from "../../currency/index.js";
 import {
-  BONE_ADDRESS,
   SHIB_ADDRESS,
   LEASH_ADDRESS,
   TREAT_ADDRESS,
@@ -61,7 +60,6 @@ export const EVM_DEFAULT_BASES = {
     USDC[EvmChainId.SEPOLIA],
     USDT[EvmChainId.SEPOLIA],
     DAI[EvmChainId.SEPOLIA],
-    WETH9[EvmChainId.SEPOLIA],
   ],
   // [EvmChainId.ROPSTEN]: [],
   // [EvmChainId.RINKEBY]: [],
@@ -449,14 +447,6 @@ export const EVM_DEFAULT_BASES = {
     USDC[EvmChainId.SHIBARIUM],
     USDT[EvmChainId.SHIBARIUM],
     DAI[EvmChainId.SHIBARIUM],
-    WETH9[EvmChainId.SHIBARIUM],
-    new Token({
-      chainId: EvmChainId.SHIBARIUM,
-      address: BONE_ADDRESS[EvmChainId.SHIBARIUM],
-      decimals: 18,
-      symbol: "BONE",
-      name: "Bone ShibaSwap",
-    }),
     new Token({
       chainId: EvmChainId.SHIBARIUM,
       address: SHIB_ADDRESS[EvmChainId.SHIBARIUM],
@@ -485,14 +475,6 @@ export const EVM_DEFAULT_BASES = {
     USDC[EvmChainId.PUPPYNET],
     USDT[EvmChainId.PUPPYNET],
     DAI[EvmChainId.PUPPYNET],
-    WETH9[EvmChainId.PUPPYNET],
-    new Token({
-      chainId: EvmChainId.PUPPYNET,
-      address: BONE_ADDRESS[EvmChainId.PUPPYNET],
-      decimals: 18,
-      symbol: "BONE",
-      name: "Bone ShibaSwap",
-    }),
     new Token({
       chainId: EvmChainId.PUPPYNET,
       address: SHIB_ADDRESS[EvmChainId.PUPPYNET],
