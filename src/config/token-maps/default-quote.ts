@@ -1,4 +1,4 @@
-import { EvmChainId, evmNatives } from '../../chain/evm/index.js'
+import { EvmChainId, evmNatives } from "../../chain/evm/index.js";
 import {
   APE_USD,
   ARB,
@@ -13,17 +13,17 @@ import {
   USDT,
   WETH9,
   axlUSDC,
-} from '../../currency/index.js'
+} from "../../currency/index.js";
 
 export const defaultCurrency = {
   ...(Object.fromEntries(
     Object.keys(evmNatives).map((key) => [
       key,
       Native.onChain(Number(key) as EvmChainId),
-    ]),
+    ])
   ) as Omit<Record<EvmChainId, Native>, typeof EvmChainId.SKALE_EUROPA>),
   [EvmChainId.SKALE_EUROPA]: WETH9[EvmChainId.SKALE_EUROPA],
-} as const
+} as const;
 
 export const defaultQuoteCurrency = {
   [EvmChainId.ETHEREUM]: SUSHI[EvmChainId.ETHEREUM],
@@ -62,17 +62,17 @@ export const defaultQuoteCurrency = {
   [EvmChainId.BOBA]: USDC[EvmChainId.BOBA],
   [EvmChainId.BOBA_AVAX]: new Token({
     chainId: EvmChainId.BOBA_AVAX,
-    address: '0x4200000000000000000000000000000000000023',
+    address: "0x4200000000000000000000000000000000000023",
     decimals: 18,
-    symbol: 'AVAX',
-    name: 'Avalanche',
+    symbol: "AVAX",
+    name: "Avalanche",
   }),
   [EvmChainId.BOBA_BNB]: new Token({
     chainId: EvmChainId.BOBA_BNB,
-    address: '0x4200000000000000000000000000000000000023',
+    address: "0x4200000000000000000000000000000000000023",
     decimals: 18,
-    symbol: 'BNB',
-    name: 'Binance Coin',
+    symbol: "BNB",
+    name: "Binance Coin",
   }),
   [EvmChainId.BTTC]: USDC[EvmChainId.BTTC],
   [EvmChainId.THUNDERCORE]: USDC[EvmChainId.THUNDERCORE],
@@ -101,4 +101,6 @@ export const defaultQuoteCurrency = {
   [EvmChainId.APE]: APE_USD,
   [EvmChainId.SONIC]: WETH9[EvmChainId.SONIC],
   [EvmChainId.HEMI]: USDC[EvmChainId.HEMI],
-} as const
+  [EvmChainId.SHIBARIUM]: USDC[EvmChainId.SHIBARIUM],
+  [EvmChainId.PUPPYNET]: USDC[EvmChainId.PUPPYNET],
+} as const;
