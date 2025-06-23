@@ -46,19 +46,74 @@ describe("Currency", () => {
 });
 
 describe("Native token address", () => {
-  it("returns BONE address for Shibarium", () => {
-    expect(Native.onChain(EvmChainId.SHIBARIUM).address).toBe(
-      "0x0000000000000000000000000000000000001010"
-    );
-  });
-  it("returns BONE address for Puppynet", () => {
-    expect(Native.onChain(EvmChainId.PUPPYNET).address).toBe(
-      "0x0000000000000000000000000000000000001010"
-    );
-  });
-  it("returns zero address for Ethereum", () => {
-    expect(Native.onChain(EvmChainId.ETHEREUM).address).toBe(
-      "0x0000000000000000000000000000000000000000"
-    );
-  });
+  const BONE_ADDRESS = "0x0000000000000000000000000000000000001010";
+  const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+  const ALL_CHAIN_IDS = [
+    EvmChainId.ETHEREUM,
+    EvmChainId.GÖRLI,
+    EvmChainId.OPTIMISM,
+    EvmChainId.CRONOS,
+    EvmChainId.ROOTSTOCK,
+    EvmChainId.TELOS,
+    EvmChainId.BSC,
+    EvmChainId.OKEX,
+    EvmChainId.BSC_TESTNET,
+    EvmChainId.GNOSIS,
+    EvmChainId.THUNDERCORE,
+    EvmChainId.SHIBARIUM,
+    EvmChainId.FUSE,
+    EvmChainId.SONIC,
+    EvmChainId.PUPPYNET,
+    EvmChainId.MANTA,
+    EvmChainId.BTTC,
+    EvmChainId.FANTOM,
+    EvmChainId.BOBA,
+    EvmChainId.METIS,
+    EvmChainId.POLYGON_ZKEVM,
+    EvmChainId.CORE,
+    EvmChainId.ZKSYNC_ERA,
+    EvmChainId.BASE,
+    EvmChainId.KAVA,
+    EvmChainId.MOONBEAM,
+    EvmChainId.MOONRIVER,
+    EvmChainId.ZETACHAIN,
+    EvmChainId.MANTLE,
+    EvmChainId.FANTOM_TESTNET,
+    EvmChainId.POLYGON,
+    EvmChainId.POLYGON_TESTNET,
+    EvmChainId.ARBITRUM,
+    EvmChainId.ARBITRUM_NOVA,
+    EvmChainId.ARBITRUM_TESTNET,
+    EvmChainId.AVALANCHE,
+    EvmChainId.AVALANCHE_TESTNET,
+    EvmChainId.HECO,
+    EvmChainId.HARMONY,
+    EvmChainId.CELO,
+    EvmChainId.PALM,
+    EvmChainId.BOBA_AVAX,
+    EvmChainId.BOBA_BNB,
+    EvmChainId.SEPOLIA,
+    EvmChainId.FILECOIN,
+    EvmChainId.HAQQ,
+    EvmChainId.LINEA,
+    EvmChainId.SCROLL,
+    EvmChainId.BLAST,
+    EvmChainId.SKALE_EUROPA,
+    EvmChainId.CURTIS,
+    EvmChainId.MODE,
+    EvmChainId.TAIKO,
+    EvmChainId.ZKLINK,
+    EvmChainId.APE,
+    EvmChainId.HEMI,
+  ];
+
+  for (const chainId of ALL_CHAIN_IDS) {
+    const expected =
+      chainId === EvmChainId.SHIBARIUM || chainId === EvmChainId.PUPPYNET
+        ? BONE_ADDRESS
+        : ZERO_ADDRESS;
+    it(`returns correct native address for chainId ${chainId}`, () => {
+      expect(Native.onChain(chainId).address).toBe(expected);
+    });
+  }
 });
