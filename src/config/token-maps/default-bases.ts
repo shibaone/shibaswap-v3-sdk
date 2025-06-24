@@ -10,7 +10,6 @@ import {
   MIM,
   Native,
   SKL,
-  SUSHI,
   Token,
   USDB,
   USDC,
@@ -30,6 +29,7 @@ import {
   axlWBTC,
 } from "../../currency/index.js";
 import {
+  BONE_ADDRESS,
   SHIB_ADDRESS,
   LEASH_ADDRESS,
   TREAT_ADDRESS,
@@ -48,12 +48,40 @@ export const EVM_DEFAULT_BASES = {
   [EvmChainId.ETHEREUM]: [
     Native.onChain(EvmChainId.ETHEREUM),
     WNATIVE[EvmChainId.ETHEREUM],
-    SUSHI[EvmChainId.ETHEREUM],
+    new Token({
+      chainId: EvmChainId.ETHEREUM,
+      address: BONE_ADDRESS[EvmChainId.ETHEREUM],
+      decimals: 18,
+      symbol: "BONE",
+      name: "BONE SHIBASWAP",
+    }),
+    new Token({
+      chainId: EvmChainId.ETHEREUM,
+      address: TREAT_ADDRESS[EvmChainId.ETHEREUM],
+      decimals: 18,
+      symbol: "TREAT",
+      name: "Shiba Inu Treat",
+    }),
+    new Token({
+      chainId: EvmChainId.ETHEREUM,
+      address: SHIB_ADDRESS[EvmChainId.ETHEREUM],
+      decimals: 18,
+      symbol: "SHIB",
+      name: "Shiba Inu",
+    }),
+    new Token({
+      chainId: EvmChainId.ETHEREUM,
+      address: LEASH_ADDRESS[EvmChainId.ETHEREUM],
+      decimals: 18,
+      symbol: "LEASH",
+      name: "DOGE KILLER ",
+    }),
     WBTC[EvmChainId.ETHEREUM],
     USDC[EvmChainId.ETHEREUM],
     USDT[EvmChainId.ETHEREUM],
     DAI[EvmChainId.ETHEREUM],
   ],
+
   [EvmChainId.SEPOLIA]: [
     Native.onChain(EvmChainId.SEPOLIA),
     WNATIVE[EvmChainId.SEPOLIA],
