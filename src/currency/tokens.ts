@@ -10,6 +10,7 @@ import {
   ARB_ADDRESS,
   BAL_ADDRESS,
   BCT_ADDRESS,
+  BONE_ADDRESS,
   BUSD_ADDRESS,
   COMP_ADDRESS,
   CRV_ADDRESS,
@@ -27,6 +28,7 @@ import {
   KLIMA_ADDRESS,
   KNCv2_ADDRESS,
   KP3R_ADDRESS,
+  LEASH_ADDRESS,
   LDO_ADDRESS,
   LINK_ADDRESS,
   LUSD_ADDRESS,
@@ -45,6 +47,7 @@ import {
   QUICK_ADDRESS,
   RNDR_ADDRESS,
   SAND_ADDRESS,
+  SHIB_ADDRESS,
   SNX_ADDRESS,
   STG_ADDRESS,
   STONE_ADDRESS,
@@ -52,6 +55,7 @@ import {
   SWISE_ADDRESS,
   SolvBTC_ADDRESS,
   TEL_ADDRESS,
+  TREAT_ADDRESS,
   TRIBE_ADDRESS,
   TUSD_ADDRESS,
   UDSP_ADDRESS,
@@ -1390,3 +1394,39 @@ export const USDPLUS = addressMapToTokenMap(
   },
   USDPLUS_ADDRESS
 ) as Record<keyof typeof USDPLUS_ADDRESS, Token>;
+
+export const BONE = addressMapToTokenMap(
+  {
+    decimals: 18,
+    symbol: "BONE",
+    name: "BONE SHIBASWAP",
+  },
+  BONE_ADDRESS
+) as Record<keyof typeof BONE_ADDRESS, Token>;
+
+export const SHIB = addressMapToTokenMap(
+  {
+    decimals: 18,
+    symbol: "SHIB",
+    name: "Shiba Inu",
+  },
+  SHIB_ADDRESS
+) as Record<keyof typeof SHIB_ADDRESS, Token>;
+
+export const LEASH = addressMapToTokenMap(
+  {
+    decimals: 18,
+    symbol: "LEASH",
+    name: "DOGE KILLER",
+  },
+  LEASH_ADDRESS
+) as Record<keyof typeof LEASH_ADDRESS, Token>;
+
+export const TREAT = addressMapToTokenMap(
+  {
+    decimals: 18,
+    symbol: "TREAT",
+    name: "Shiba Inu Treat",
+  },
+  TREAT_ADDRESS
+) as Record<keyof typeof TREAT_ADDRESS, Token>;
