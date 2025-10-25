@@ -1,0 +1,88 @@
+@@ -0,0 +1,87 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  SBOM_FORMAT: "cyclonedx"
+  SBOM_FILE: "gl-dependency-scanning-report.json"
+
+generate_sbom:
+  stage: build
+  image: docker:25.0
+  services:
+    - docker:25.0-dind
+  variables:
+    CDXGEN_VERSION: "9.9.1"
+  before_script:
+    - docker pull cyclonedx/cdxgen:$CDXGEN_VERSION
+  script:
+    # Use cdxgen to create an SBOM for the application.
+    # The tool automatically detects the project type (e.g., Node.js, Python, Java).
+    - docker run --rm -v "$(pwd):/app" cyclonedx/cdxgen:$CDXGEN_VERSION -o "/app/$SBOM_FILE"
+    - cat "$SBOM_FILE"
+  artifacts:
+    reports:
+      # GitLab can parse CycloneDX JSON files to populate its own dependency dashboard.
+      dependency_scanning: "$SBOM_FILE"
+    paths:
+      - "$SBOM_FILE"
+
+# --- Optional Stages ---
+
+# This stage uses a third-party tool like Dependency-Track to analyze the SBOM
+# and report on vulnerabilities.
+scan_sbom:
+  stage: test
+  image: alpine:3.18
+  needs:
+    - generate_sbom
+  before_script:
+    # Use a tool for uploading to Dependency-Track
+    - apk add --no-cache curl
+  script:
+    - echo "Uploading SBOM to Dependency-Track for analysis..."
+    # You would typically use a tool or script here to upload $SBOM_FILE
+    # to your Dependency-Track instance via its API.
+    - echo "Dependency-Track analysis complete."
+  allow_failure: true
+
+# This stage shows how to merge multiple SBOMs, which is useful for
+# multi-component projects.
+merge_sboms:
+  stage: test
+  image: docker:25.0
+  services:
+    - docker:25.0-dind
+  needs:
+    - generate_sbom # Or multiple jobs that generate different SBOMs
+  variables:
+    CYCLONEDX_MERGE_VERSION: "0.2.1"
+  script:
+    - docker pull cyclonedx/cyclonedx-merge:$CYCLONEDX_MERGE_VERSION
+    - mkdir -p sboms
+    - mv $SBOM_FILE sboms/
+    # This command merges all SBOMs in the 'sboms' directory.
+    - docker run --rm -v "$(pwd)/sboms:/sboms" cyclonedx/cyclonedx-merge:$CYCLONEDX_MERGE_VERSION -o /sboms/merged.json
+    - cat sboms/merged.json
+  artifacts:
+    paths:
+      - "sboms/merged.json"
+name: Generate SBOM
+on: push
+jobs:
+  build-and-sbom:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate SBOM
+        uses: CycloneDX/cdxgen-action@v2
+        with:
+          output: 'bom.json'
+          format: 'cyclonedx'
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: SBOM
+          path: bom.json
