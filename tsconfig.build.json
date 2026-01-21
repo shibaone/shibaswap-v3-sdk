@@ -1,18 +1,36 @@
 {
-    // This file is used to compile the for cjs and esm (see package.json build scripts). It should exclude all test files.
-    "extends": "./tsconfig.base.json",
-    "include": ["src"],
-    "exclude": [
-      "src/**/*.bench.ts",
-      "src/**/*.bench-d.ts",
-      "src/**/*.test.ts",
-      "src/**/*.test-d.ts",
-      "src/chain/evm/generate.ts", 
-      "src/abi/splitter.ts"
-    ],
-    "compilerOptions": {
-      "moduleResolution": "node",
-      "sourceMap": true,
-      "rootDir": "./src"
-    }
+  /* Inherit core compiler rules from base config */
+  "extends": "./tsconfig.base.json",
+  
+  "include": ["src"],
+  
+  /* Exclude development, testing, and generator utilities to minimize attack surface */
+  "exclude": [
+    "src/**/*.bench.ts",
+    "src/**/*.bench-d.ts",
+    "src/**/*.test.ts",
+    "src/**/*.test-d.ts",
+    "src/chain/evm/generate.ts", 
+    "src/abi/splitter.ts",
+    "node_modules",
+    "dist"
+  ],
+
+  "compilerOptions": {
+    /* Module Resolution: NodeNext is preferred for dual-module (CJS/ESM) support */
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* Security & Debugging */
+    "sourceMap": true,        // Essential for debugging minified production code
+    "declaration": true,      // Generates .d.ts files for library consumers
+    "declarationMap": true,   // Maps types back to source for better DX
+    "removeComments": true,   // Security: Strip developer TODOs and internal notes from JS
+    
+    /* Strictness: Ensure no leaky types reach production */
+    "noEmitOnError": true,    // Prevents building if there are type errors
+    "stripInternal": true     // Hides @internal marked code from public type definitions
   }
+}
